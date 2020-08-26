@@ -4,11 +4,9 @@ import pandas as pd
 import Data.db_crud as db
 from datetime import datetime
 
-print('start-time: ', str(datetime.now())[:19])
+# print('start-time: ', str(datetime.now())[:19])
 
 dbu = db.DBUser('root', 'rnaehf1245', '127.0.0.1', 'capstone', 3307, 'utf8')
-
-
 
 conn = db.db_connection(dbu)
 try:
@@ -27,4 +25,4 @@ try:
 finally:
     conn.close()
 
-print('end-time: ', str(datetime.now())[:19])
+# print('end-time: ', str(datetime.now())[:19])
