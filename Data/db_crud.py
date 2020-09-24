@@ -12,7 +12,7 @@ class DBUser:
         self.charset = charset
 
 
-def db_connection(db_info):
+def connection(db_info):
     conn = pymysql.connect(user=db_info.user,
                            passwd=db_info.passwd,
                            host=db_info.host,
@@ -22,8 +22,8 @@ def db_connection(db_info):
     return conn
 
 
-def db_select(query):
-    conn = db_connection()
+def select(query):
+    conn = connection()
     try:
         with conn.cursor() as curs:
             curs.execute(query)
